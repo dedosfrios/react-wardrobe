@@ -33,22 +33,35 @@ import React, { Component } from 'react';
 // 					},
 // 				];
 
+
+
 class BasicInfo extends React.Component{
 	render(){
 		return (<div>
-					<div>{this.props.name}</div>
-					<div>{this.props.profession}</div>
-					<div>{this.props.age}</div>
-				</div>
-			)
+							<div>Hello {this.props.name}</div>
+							<div>You are: {this.props.profession}</div>
+							<div>and You are: {this.props.age}</div>		
+							<ActiveEmploye />					
+						</div>
+			);
+	}
+}
+
+class ActiveEmploye extends React.Component{
+	render(){
+		return (
+			<div>
+				<div>Is currently working: {this.props.active}</div>
+			</div>
+			);
 	}
 }
 
 class User extends React.Component{
 	render(){
 		return (
-			<div>
-				<BasicInfo name="Jamie Lannister" profession="KingSlayer" age="25"/>				
+			<div className="user">
+				<BasicInfo name="Jamie Lannister" profession="The King Slayer" age="25" active="NO"/>			
 			</div>
 		);
 	}

@@ -6,7 +6,7 @@ import User from './components/UserUniflow'
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <div className="app">
         <User />
       </div>
     );
