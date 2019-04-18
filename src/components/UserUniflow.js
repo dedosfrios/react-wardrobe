@@ -1,73 +1,34 @@
 import React, { Component } from 'react';
 
-// const employes = [
-// 					{ id:1,
-// 					  name:'One aleatorio',
-// 					  profession:'job1',
-// 					  age:21
-// 					},
-// 					{id:2,
-// 					 name:'Two aleatorio',
-// 					 profession:'job2',
-// 					 age:22
-// 					},
-// 					{id:3,
-// 					 name:'Three aleatorio',
-// 					 profession:'job3',
-// 					 age:23
-// 					},
-// 					{id:4,
-// 					 name:'Four aleatorio',
-// 					 profession:'job4',
-// 					 age:24
-// 					},
-// 					{id:5,
-// 					 name:'Five aleatorio',
-// 					 profession:'job5',
-// 					 age:25
-// 					},
-// 					{id:6,
-// 					 name:'Six aleatorio',
-// 					 profession:'job6',
-// 					 age:26
-// 					},
-// 				];
 
 
+class Parent extends Component{
+	constructor(props){
+		super(props);	
 
-class BasicInfo extends React.Component{
+		this.state = {state_one:"Acabo de cambiar el estado de state_two",
+									state_two:"two"};
+		this.mostrarState_one = this.mostrarState_one.bind(this);
+		this.mastrarState_two = this.mastrarState_two.bind(this);							
+	}
+	mostrarState_one(){
+		this.setState({state_two:"guess who in this B"})
+	}
+	mastrarState_two(){
+		this.setState({state_two:"I change it again Biatch!"})
+	}
 	render(){
-		return (<div>
-							<div>Hello {this.props.name}</div>
-							<div>You are: {this.props.profession}</div>
-							<div>and You are: {this.props.age}</div>		
-							<ActiveEmploye />					
-						</div>
-			);
+		return ( <div>
+				<Child_one dato={this.props.info.name}/>
+				<button onClick={this.mostrarState_one}>Click me to change whats underneath</button>
+				<h3>{this.state.state_two}</h3>
+				<button onClick={this.mostrarState_two}>change it again</button>				
+			</div>)
 	}
 }
 
-class ActiveEmploye extends React.Component{
-	render(){
-		return (
-			<div>
-				<div>Is currently working: {this.props.active}</div>
-			</div>
-			);
-	}
-}
-
-class User extends React.Component{
-	render(){
-		return (
-			<div className="user">
-				<BasicInfo name="Jamie Lannister" profession="The King Slayer" age="25" active="NO"/>			
-			</div>
-		);
-	}
-}
+const Child_one = (props) => <h3>{props.dato}</h3>
+		
 
 
-
-
-export default User
+export default Parent
