@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import Parent from './components/UserUniflow'
+import Parent from './components/propsandchilds'
 
 class App extends Component {
   render() {
     return (
       <div className="app">
-        <Parent info={{name:"Child_One"}}/>
+       
       </div>
     );
   }
