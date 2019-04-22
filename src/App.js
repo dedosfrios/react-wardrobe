@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import Parent from './components/propsandchilds'
+import LoginForm from './components/HandlingInput'
 
 class App extends Component {
   render() {
     return (
       <div className="app">
-       
+       	<LoginForm/>
       </div>
     );
   }
